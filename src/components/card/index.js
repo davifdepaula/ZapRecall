@@ -25,32 +25,34 @@ function Card(props) {
 
   function front(){
     return (
+      <div data-test="flashcard">
       <CardContainer color = {cards[index].color}>
         <span>Pergunta {index + 1}</span> 
-        <div onClick={() => {if(!cards[index].color) setShowHidden(true)}}>
+        <div data-test="play-btn" onClick={() => {if(!cards[index].color) setShowHidden(true)}}>
           {cards[index].color ? (showIcon(cards[index].color)):(<ion-icon name="play-outline"></ion-icon>)}
         </div>
 
       </CardContainer>
+      </div>
     )
   }
 
   function showIcon(color){
     if( color === "#FF3030"){
       return(
-        <img src = {icone_erro}/>
+        <img data-test="no-icon" src = {icone_erro}/>
       )
     }
 
     else if( color === "#2FBE34"){
       return(
-        <img src = {icone_certo}/>
+        <img data-test="zap-icon" src = {icone_certo}/>
       )
     }
 
     if( color === "#FF922E"){
       return(
-        <img src = {icone_quase}/>
+        <img data-test="partial-icon" src = {icone_quase}/>
       )
     }
   }
@@ -58,7 +60,7 @@ function Card(props) {
   function showCardButtons(){
     return (
     <HiddenContainer color = {cards[index].color}>
-      <span> {item.question} </span>
+      <span data-test="flashcard-text" > {item.question} </span>
       <ButtonContainer>
         {buttons.map((item)=> {
           return (
@@ -84,8 +86,8 @@ function Card(props) {
       showButtons?      
       (showCardButtons()):      
       (<HiddenContainer>
-        <span> {item.question} </span>
-        <img onClick={() => setShowButtons(true)} src = {seta_virar} />
+        <span data-test="flashcard-text"> {item.question} </span>
+        <img data-test="turn-btn" onClick={() => setShowButtons(true)} src = {seta_virar} />
       </HiddenContainer>)
   )}
 

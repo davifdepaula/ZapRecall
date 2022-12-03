@@ -64,7 +64,7 @@ function App() {
           <img src = {logo}/> <span>ZapRecall</span>
         </ZapLogo>
 
-      <button onClick={() => setGameOn(true)}>Iniciar Recall</button>
+      <button data-test="start-btn" onClick={() => setGameOn(true)}>Iniciar Recall</button>
     </Zap>)
   }
 

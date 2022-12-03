@@ -9,19 +9,19 @@ function Footer(props) {
     function showIcon(color, index){
       if( color === "#FF3030"){
         return(
-          <img key={index} src = {icone_erro}/>
+          <img data-test="no-icon" key={index} src = {icone_erro}/>
         )
       }
   
       else if( color === "#2FBE34"){
         return(
-          <img key={index} src = {icone_certo}/>
+          <img data-test="zap-icon" key={index} src = {icone_certo}/>
         )
       }
   
       if( color === "#FF922E"){
         return(
-          <img key={index} src = {icone_quase}/>
+          <img data-test="partial-icon" key={index} src = {icone_quase}/>
         )
       }
     }
@@ -30,7 +30,7 @@ function Footer(props) {
   function footerMainContainer(){
     return (
       <>
-       <span>{conclude} / {cards.length} CONCLUÍDOS</span>
+       <span data-test="footer">{conclude} / {cards.length} CONCLUÍDOS</span>
        <ButtonContainer>
           {cards.map((item, index) => {
             return (
@@ -58,20 +58,16 @@ function Footer(props) {
       )}
     else{
       if(includesRed()){
-        console.log(includesRed())
-        console.log("tem vermelho")
         return (
         <FooterContainer>
-          <span>Putz...</span> <span>Ainda faltam alguns... Mas não desanime!</span>
+          <span data-test="finish-text">Putz...</span> <span>Ainda faltam alguns... Mas não desanime!</span>
           {footerMainContainer()}
         </FooterContainer>
         )}
       else {
-        console.log(includesRed())
-        console.log("não tem vermelho")
         return (
         <FooterContainer>
-          <span>Parabéns!</span> <span>Você não esqueceu de nenhum flashcard!</span>
+          <span data-test="finish-text">Parabéns!</span> <span>Você não esqueceu de nenhum flashcard!</span>
           {footerMainContainer()}
         </FooterContainer>
 

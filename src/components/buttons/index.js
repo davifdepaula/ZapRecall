@@ -7,14 +7,12 @@ function Buttons(props) {
 
     return (
         <Container color = {color}>
-            <div onClick={() => {
+            <div data-test="no-btn partial-btn zap-btn" onClick={() => {
                 setConclude(conclude + 1)
                 setShowButtons(false)
                 setShowHidden(false)
                 cards[index].color = color
                 setCards([...cards])
-
-
             }}>{text}</div>
         </Container>
     )
