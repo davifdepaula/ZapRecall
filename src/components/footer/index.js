@@ -6,7 +6,6 @@ import icone_quase from '../../assets/icone_quase.png'
 
 function Footer(props) {
     const {cards, conclude} = props
-    const [includesRed, setIncludesRed] = useState(false)
     function showIcon(color, index){
       if( color === "#FF3030"){
         return(
@@ -34,44 +33,53 @@ function Footer(props) {
        <span>{conclude} / {cards.length} CONCLUÍDOS</span>
        <ButtonContainer>
           {cards.map((item, index) => {
-            if(cards[index].color === "#FF3030") setIncludesRed(true)
             return (
               cards[index].color? (showIcon(cards[index].color, index)) : ("")
             )
           })}
       </ButtonContainer>
       </>
-
-    )
-    
+    )    
   }
+
+  function includesRed(){
+    for(let i in cards){
+      if(cards[i].color === "#FF3030" ) return true
+    }
+    return false
+  }
+  
   function showFooter(){
     if(conclude !== cards.length ){
       return (
         <FooterContainer>
           {footerMainContainer()}
         </FooterContainer>
-    )}
-    else {
-      if(includesRed){
+      )}
+    else{
+      if(includesRed()){
+        console.log(includesRed())
+        console.log("tem vermelho")
         return (
         <FooterContainer>
           <span>Putz...</span> <span>Ainda faltam alguns... Mas não desanime!</span>
           {footerMainContainer()}
-      </FooterContainer>
-      )}
+        </FooterContainer>
+        )}
       else {
+        console.log(includesRed())
+        console.log("não tem vermelho")
         return (
         <FooterContainer>
           <span>Parabéns!</span> <span>Você não esqueceu de nenhum flashcard!</span>
           {footerMainContainer()}
-      </FooterContainer>
+        </FooterContainer>
 
       )}
     }
 
   } 
-
+  
   return (
     showFooter()
   )
