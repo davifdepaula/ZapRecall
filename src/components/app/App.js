@@ -27,7 +27,7 @@ function App() {
 	{ question: "Usamos o npm para __", answer: "Gerenciar os pacotes necessários e suas dependências", color: "" },
 	{ question: "Usamos props para __", answer: "Passar diferentes informações para componentes", color: "" },
 	{ question: "Usamos estado (state) para __", answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente", color: ""} ])
-  const concludeQuantity = cards.length
+  
 
   function onZap(){
     return (
@@ -52,7 +52,6 @@ function App() {
         })}
         <Footer
         conclude = {conclude}
-        concludeQuantity = {concludeQuantity}
         cards = {cards} />
       </ContainerApp>
     )

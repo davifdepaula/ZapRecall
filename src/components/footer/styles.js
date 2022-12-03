@@ -19,14 +19,14 @@ export const FooterContainer = styled.div`
     padding: 10px;
     
     span {
-        padding-top: 5px;
+        margin-top: 10px;
     }
 `
 
 export const ButtonContainer = styled.div`
     display: flex;
     width: 80%;
-    justify-content: flex-start;
+    justify-content: center;
     margin: 20px;
     gap: 5px;
 `
