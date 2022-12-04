@@ -27,7 +27,7 @@ function Card(props) {
     return (
       <div data-test="flashcard">
       <CardContainer color = {cards[index].color}>
-        <span>Pergunta {index + 1}</span> 
+        <span data-test="flashcard-text">Pergunta {index + 1}</span> 
         <div data-test="play-btn" onClick={() => {if(!cards[index].color) setShowHidden(true)}}>
           {cards[index].color ? (showIcon(cards[index].color)):(<ion-icon name="play-outline"></ion-icon>)}
         </div>

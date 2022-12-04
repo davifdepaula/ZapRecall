@@ -7,13 +7,13 @@ function Buttons(props) {
 
     return (
         <Container color = {color}>
-            <div data-test="no-btn partial-btn zap-btn" onClick={() => {
+            <button data-test="no-btn partial-btn zap-btn" onClick={() => {
                 setConclude(conclude + 1)
                 setShowButtons(false)
                 setShowHidden(false)
                 cards[index].color = color
                 setCards([...cards])
-            }}>{text}</div>
+            }}>{text}</button>
         </Container>
     )
 }
@@ -21,20 +21,24 @@ function Buttons(props) {
 export default Buttons
 
 const Container = styled.div`
-    width: 90px;
-    font-family: 'Recursive';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    button {
+    width: 90px;
+    background-color: ${props => props.color};
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 14px;
     text-align: center;
     color: #FFFFFF;
-    background-color: ${props => props.color};
     border-radius: 5px;
     border: 1px solid blue;
     padding:5px;
     cursor: pointer;
+    }
+
 `
