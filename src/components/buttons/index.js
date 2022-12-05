@@ -3,8 +3,7 @@ import styled from 'styled-components'
 
 function Buttons(props) {
     const {text, color, cards, setCards, conclude, index, setConclude, setShowHidden, setShowButtons, data} = props
-    console.log(data)
-
+    
     return (
         <Container color = {color}>
             <button data-test ={data} onClick={() => {

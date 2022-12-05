@@ -40,7 +40,9 @@ function Footer(props) {
        <ButtonContainer>
           {cards.map((item, index) => {
             return (
-              cards[index].color? (showIcon(cards[index].color, index)) : ("")
+              <div key = {index}>
+                {cards[index].color? (showIcon(cards[index].color, index)) : ("")}
+              </div>
             )
           })}
       </ButtonContainer>
