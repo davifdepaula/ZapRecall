@@ -9,19 +9,25 @@ function Footer(props) {
     function showIcon(color, index){
       if( color === "#FF3030"){
         return(
-          <img data-test="no-icon" key={index} src = {icone_erro}/>
+          <div data-test="no-icon">
+            <img key={index} src = {icone_erro}/>
+          </div>
         )
       }
   
       else if( color === "#2FBE34"){
         return(
-          <img data-test="zap-icon" key={index} src = {icone_certo}/>
+          <div data-test="zap-icon">
+            <img key={index} src = {icone_certo}/>
+          </div>
         )
       }
   
       if( color === "#FF922E"){
         return(
-          <img data-test="partial-icon" key={index} src = {icone_quase}/>
+          <div data-test="partial-icon" >
+            <img key={index} src = {icone_quase}/>
+          </div>
         )
       }
     }
@@ -29,7 +35,7 @@ function Footer(props) {
 
   function footerMainContainer(){
     return (
-      <>
+      <div>
        <span data-test="footer">{conclude} / {cards.length} CONCLUÍDOS</span>
        <ButtonContainer>
           {cards.map((item, index) => {
@@ -38,7 +44,7 @@ function Footer(props) {
             )
           })}
       </ButtonContainer>
-      </>
+      </div>
     )    
   }
 
@@ -60,14 +66,18 @@ function Footer(props) {
       if(includesRed()){
         return (
         <FooterContainer>
-          <span data-test="finish-text">Putz...</span> <span>Ainda faltam alguns... Mas não desanime!</span>
+          <div data-test="finish-text">
+            <span>Putz...</span> <span>Ainda faltam alguns... Mas não desanime!</span>
+          </div>
           {footerMainContainer()}
         </FooterContainer>
         )}
       else {
         return (
         <FooterContainer>
-          <span data-test="finish-text">Parabéns!</span> <span>Você não esqueceu de nenhum flashcard!</span>
+          <div data-test="finish-text">
+            <span>Parabéns!</span> <span >Você não esqueceu de nenhum flashcard!</span>
+          </div>
           {footerMainContainer()}
         </FooterContainer>
 
