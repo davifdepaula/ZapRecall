@@ -6,9 +6,9 @@ import icone_certo from '../../assets/icone_certo.png'
 import icone_erro from '../../assets/icone_erro.png'
 import icone_quase from '../../assets/icone_quase.png'
 
-const buttons = [{text: "Não lembrei", color: "#FF3030"}, 
-                {text: "Quase não Lembrei", color: "#FF922E"}, 
-                {text: "Zap", color: "#2FBE34"}]
+const buttons = [{text: "Não lembrei", color: "#FF3030", test:"noicon"}, 
+                {text: "Quase não Lembrei", color: "#FF922E", test: "partial-icon" }, 
+                {text: "Zap", color: "#2FBE34", test: "zap-icon" }]
 
 function Card(props) {
   const {item, index, conclude, cards, setCards, setConclude} =  props
@@ -75,6 +75,7 @@ function Card(props) {
               setConclude = {setConclude}
               setShowHidden = {setShowHidden}
               setShowButtons = {setShowButtons}
+              data = {item.test}
             />)
         })}
       </ButtonContainer>

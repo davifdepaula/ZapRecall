@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 function Buttons(props) {
-    const {text, color, cards, setCards, conclude, index, setConclude, setShowHidden, setShowButtons} = props
-
+    const {text, color, cards, setCards, conclude, index, setConclude, setShowHidden, setShowButtons, data} = props
+    console.log(data)
 
     return (
         <Container color = {color}>
-            <button data-test="no-btn partial-btn zap-btn" onClick={() => {
+            <button data-test ={data} onClick={() => {
                 setConclude(conclude + 1)
                 setShowButtons(false)
                 setShowHidden(false)
